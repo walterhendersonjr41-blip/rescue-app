@@ -1,2 +1,0 @@
-module.exports = async p => { await p.fill('#lf textarea[name=desc]','10x10 unit, couch, 2 tvs, tools, boxes of clothes'); await p.click('#aiDesc');
- await p.waitForFunction(()=>document.querySelector('#aiDescMsg').style.display!=='none',null,{timeout:90000}); return await p.evaluate(()=>({msg:document.querySelector('#aiDescMsg').textContent, desc:document.querySelector('#lf textarea[name=desc]').value.slice(0,200)})); };
