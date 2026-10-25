@@ -1,0 +1,2 @@
+const st=require('./_store');
+module.exports=async(req,res)=>{if(req.method!=='POST')return res.status(405).end();if(!st.configured)return res.status(503).json({error:'backend not configured'});try{let ops=req.body;if(typeof ops==='string')ops=JSON.parse(ops);if(!Array.isArray(ops)||ops.length>50)throw new Error('ops');res.status(200).json({ok:1,_v:await st.applyOps(ops)})}catch(e){res.status(400).json({error:e.message})}};

@@ -1,0 +1,8 @@
+# Netlify: static app + shared backend (Netlify Functions + Netlify Blobs, free).
+# Deploy after the site is claimed and you are logged in:  npm install && npx netlify-cli deploy --build --prod --site <site-id>
+[build]
+  command = "mkdir -p public && cp index.html app.js sync.js TERMS.md public/"
+  publish = "public"
+  functions = "netlify/functions"
+[functions]
+  node_bundler = "esbuild"

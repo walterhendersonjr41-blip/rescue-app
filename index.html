@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Last Chance Rescue — fixed fair prices before you lose it</title>
+<style>
+.bos{border:2px solid #333;background:#fffef6;color:#111;padding:10px;margin:8px 0;border-radius:6px}.bos table{border-collapse:collapse;width:100%;font-size:13px}.bos th,.bos td{border:1px solid #bbb;padding:4px;text-align:left;vertical-align:top;word-break:break-word}.bos th{width:36%;background:#f1efe2}.bosnote{background:#fff3b0;color:#222;border:2px solid #e0a800;padding:10px;margin:8px 0;border-radius:6px;font-weight:bold;font-size:16px}
+.sigpad{border:1px dashed #888;padding:8px;margin:6px 0;border-radius:6px}.sigpad canvas{background:#fff;border:1px solid #333;width:100%;max-width:300px;touch-action:none;cursor:crosshair}.sigimg{max-width:240px;height:auto;background:#fff;border-bottom:1px solid #000}.esign{font-size:13px}
+:root{--g:#0f766e;--d:#0b1f1d;--l:#f0fdfa;--w:#b45309}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;color:#1f2937;background:#f8fafc;line-height:1.5}
+header{background:var(--d);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+header b{font-size:1.2rem}nav a{color:#99f6e4;margin-left:14px;text-decoration:none}
+.hero{background:linear-gradient(135deg,var(--g),var(--d));color:#fff;padding:48px 18px;text-align:center}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);margin:0 0 10px}.hero p{max-width:640px;margin:0 auto 20px}
+.btn{display:inline-block;background:#fbbf24;color:#111;padding:12px 20px;border-radius:10px;font-weight:700;text-decoration:none;border:0;cursor:pointer;margin:4px}
+.btn.alt{background:#fff}
+section{max-width:1000px;margin:auto;padding:32px 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 1px 4px #0002}
+.tag{display:inline-block;font-size:.75rem;padding:2px 8px;border-radius:99px;background:var(--l);color:var(--g);font-weight:700}
+.tag.ex{background:#fef3c7;color:var(--w)}
+label{display:block;font-weight:600;margin-top:10px}input,select,textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font:inherit}
+.rule{background:#ecfdf5;border-left:4px solid var(--g);padding:12px;border-radius:8px}
+.sur{font-size:.9rem;background:#f0fdf4;padding:6px 8px;border-radius:6px;margin:6px 0}.err{color:#b91c1c;font-weight:600}.lock{color:#92400e;font-weight:600;font-size:.9rem}.ok{color:var(--g);font-weight:600}
+.tl{font-size:.85rem;padding-left:4px;list-style:none}.tl li{opacity:.55}.tl li.done{opacity:1}.btn.on{background:#86efac}.tag.pwr{background:#7c3aed;color:#fff}.card.pp{outline:3px solid #7c3aed}
+footer{background:var(--d);color:#cbd5e1;padding:20px;font-size:.85rem;text-align:center}
+a{color:var(--g)}
+.pwmsg{background:#fff3c4;border:2px solid #f0b400;padding:10px;border-radius:8px;font-weight:bold;margin:8px 0}.buyf input{display:block;width:100%;margin:4px 0;padding:6px;box-sizing:border-box}.small{font-size:.85em}.btn.warn{background:#fecaca}.review{background:#fef2f2;border-left-color:#b91c1c}.btn:disabled{opacity:.7;cursor:default}.tag.sad{background:#e0e7ff;color:#3730a3}.cb{color:#7c3aed;font-weight:600}.fsn{background:#fee2e2;border:2px solid #b91c1c;color:#7f1d1d;padding:8px;border-radius:8px;font-weight:700;font-size:.9rem}.fsbox{border:2px solid #b91c1c;border-radius:8px;padding:8px;margin:6px 0;background:#fff7f7}.fsl{font-weight:600}@media(max-width:480px){.btn{display:block;width:100%;margin:6px 0}header nav a{margin-left:8px}}</style></head><body><div id="freebanner" style="background:#16a34a;color:#fff;text-align:center;padding:8px;font-weight:700">🎉 Free during launch — no fees for anyone · <span id="members">Founding members: 0 / 500</span></div>
+<header><b>🛟 Last Chance Rescue</b><nav><a href="#how">How it works</a><a href="#feed">Notices</a><a href="#list">List</a><a href="#listings">Buy</a></nav></header>
+<div class="hero"><h1>Don't lose everything at the auction.</h1>
+<p>About to lose your stuff to a storage facility, pawn shop, lender, or impound lot (storage lien, pawn forfeit, car repo / impound)? Post it at <b>one fixed fair price you set</b>, with your phone number and proof. <b>No bidding.</b> First buyer at that price gets it. The bill gets paid <b>in full</b>, and the surplus goes back to you. Money sits in a hold until you both tap “Deal complete” at the counter.</p>
+<a class="btn" href="#list">List my unit / ticket / car</a><a class="btn alt" href="#feed">Browse upcoming notices</a></div>
+
+<section id="how"><h2>Everybody wins before the sale</h2><div class="grid">
+<div class="card"><h3>🏠 Owners & renters</h3><p>Instead of losing it all, get your debt paid off and keep the surplus: every dollar above what's owed goes back to you. Works for storage units, pawn tickets, and cars. You set one fixed price — no bidding, no haggling.</p></div>
+<div class="card"><h3>🔎 Buyers</h3><p>Get first look at units, pawned items, and cars before auction or forfeit. Pay the posted price — first come, first served. No bidding wars.</p></div>
+<div class="card"><h3>🏢 Facilities, pawn shops & lenders</h3><p>Get full price: back rent, loan + interest, or tow/repo bill paid in full, often more than an auction brings. Surplus goes to the owner, not a loss on your books.</p></div>
+</div>
+<div class="rule" style="margin-top:18px"><b>Fixed Fair Price Rule:</b> No bidding. Each listing has ONE price set by the owner, and it must be ≥ the bill owed + the platform fee (<span id="feerule"></span>). Everything above that is the owner's surplus. No lowball, no "tank of gas" deals.<br>
+<b>No unlock fees. Walt never takes calls.</b> The seller posts their own phone number and uploads proof (past-due notice, pawn ticket, or repo / impound notice with their name). The buyer sees the phone after tapping Buy and calls the seller directly.<br><b>How a deal goes:</b> 1) Buyer pays the full price into the app hold. 2) Buyer and seller meet at the facility / pawn shop / lender or impound lot; the buyer inspects first (Decline = full refund, no fees), then both tap <b>Pay cashier</b> and the bill is paid in full from the hold. 3) Buyer gets the stuff, both tap <b>Deal complete</b>: surplus goes to the seller, platform fee to Walt, seller signs a bill of sale.<br><b>⚡ Power Play (buyers):</b> when the buyer taps <b>Deal complete</b>, they earn a Power Play — first dibs on new listings. Every new listing is tagged “⚡ Power Play early access” for its first 24 hours, and only buyers with a credit can tap Buy during that window (one credit per purchase). Buyers enter their phone number when they tap Buy so the credit follows them.<br>
+<b>Storage — on the auction block only:</b> Only lockers with a lien sale notice can be listed. The facility lock stays on until the bill is paid, so contents can't be removed. Sellers must upload the lien / auction notice as proof and give the auction / lien sale date (must be in the future). The renter pays the lien in their own name (with buyer funds), then signs a dated bill of sale with ID.<br>
+<b>Pawn ticket:</b> the pawner redeems the item in their own name using buyer funds (or the shop allows a ticket transfer, if its policy and state law permit), then signs a dated bill of sale. GA and TN pawn laws vary, and shop policy applies.<br>
+<b>🚫 FINAL SALE — no going back once the cashier is paid.</b> Before each person's Pay cashier button works, they must check a FINAL SALE box. Items you can inspect: “I have looked over the item and accept it as-is.” Storage lockers (overlocked, sight unseen): “I accept this locker as-is, sight unseen, based on the posted photos and contents list.” The only after-sale remedy is <b>Report seller misrepresentation</b> — when the photos or contents list were clearly false — and any refund comes only from the seller's surplus, never from the facility, the shop, the county, or Walt.<br>
+<b>Property:</b> all money moves through a licensed closing attorney / escrow — never hand-to-hand.</div></section>
+
+<section id="feed"><h2>Notice feed</h2><p>Storage notices from published lien-sale ads (researched Oct 16, 2026). Pawn cards are EXAMPLE DATA. Nobody has been contacted.</p>
+<div class="grid" id="feedgrid"></div></section>
+
+<section id="list"><h2>List my unit, pawn ticket, or car</h2><div class="card"><form id="lf" novalidate>
+<label>Type<select name="type"><option>Storage unit</option><option>Pawn ticket</option><option>Car (repo / impound)</option><option>Other (creditor / repossession)</option></select></label>
+<label>Your name<input name="name" required></label>
+<label>Your phone number (buyers call you directly — Walt never takes calls)<input name="phone" type="tel" required></label>
+<label>General area shown publicly (city / county)<input name="area" required placeholder="e.g. Dalton, GA (Whitfield County)"></label>
+<label>Private — facility / pawn shop / lot & unit / ticket # / VIN & exact address (shown to the buyer after they tap Buy)<input name="where" required></label>
+<label>Sale / ticket due date<input type="date" name="date"></label>
+<label>Amount owed ($) — back rent, pawn loan + interest, or car loan / impound bill<input type="number" name="owed" min="0" step="0.01" required></label>
+<label>Your fixed sale price ($) — must cover the bill (buyer pays platform fee on top)<input type="number" name="price" id="price" min="0" step="0.01" required></label>
+<p id="pricehint" class="rule"></p>
+<label>Proof — past-due notice, pawn ticket, or repo / impound notice with your name<input type="file" name="proof" accept="image/*,.pdf" required></label>
+<label>What's inside / the pawned item / about the car (year, make, model, miles)<textarea name="desc" rows="3"></textarea></label>
+<div id="lockerf"><p class="rule small">🔨 Only lockers with a lien sale notice can be listed. The facility lock stays on until the bill is paid, so contents can't be removed.</p><label>Storage units — Auction / lien sale date (required, must be in the future)<input type="date" name="auctiondate"></label><label>Storage units — proof type<select name="prooftype"><option value="">Choose…</option><option value="lien">Lien / auction sale notice from the facility</option><option value="other">Other (past-due bill, receipt, etc.)</option></select></label><label>Storage units — photos of the unit (at least 1; buyers can't inspect an overlocked unit)<input type="file" name="photos" accept="image/*" multiple></label><label>Storage units — contents list<textarea name="contents" rows="2" placeholder="e.g. couch, 2 bikes, 15 boxes"></textarea></label></div>
+<label><input type="checkbox" name="owner" required style="width:auto"> I am the renter, pawner, debtor, or owner of record about to lose this to a creditor, facility, pawn shop, or government.</label>
+<button class="btn">Post listing</button> <span id="lmsg"></span></form></div>
+</section><section id="listings"><h2>Current listings — buy at the posted price</h2><p>No bidding. The first buyer to enter their phone and click "Buy at this price" gets the seller's phone, pays the full price into the app hold, then both meet at the counter (demo: no money moves).</p><div id="lflash"></div><div class="grid" id="lgrid"></div></section>
+
+
+
+<section id="admin"><h2>Admin — fake-listing reports</h2><p class="small">Demo admin view (real version: Walt-only login). Ban a seller to hide their listings and block new posts. Sellers with 2 strikes (no-shows) are auto-suspended.</p><div class="card" id="adminlist"></div></section>
+<footer><a href="TERMS.md" style="color:#93c5fd">Terms of Use (DRAFT)</a> · Last Chance Rescue — prototype by Walter Henderson Jr. Demo only: data stays in your browser, no payments processed. Not legal advice; check GA O.C.G.A. 10-4-213 / TN T.C.A. 66-31-105 (storage), GA O.C.G.A. 44-12-130+ / TN Pawnbrokers Act T.C.A. 45-6-201+ (pawn), and shop policy.</footer>
+<script>if(location.hostname.endsWith("github.io"))window.LCR_OFFLINE=true;</script><script src="sync.js"></script><script src="app.js"></script></body></html>
