@@ -22,7 +22,7 @@
     opt = opt || {};
     var msgs = Array.isArray(user) ? user.slice() : [{ role: 'user', content: String(user) }];
     msgs.unshift({ role: 'system', content: String(system || '') });
-    var body = { model: 'openai', messages: msgs, private: true, referrer: REF };
+    var body = { model: 'openai', messages: msgs, private: true, referrer: REF, reasoning_effort: 'low' };
     if (opt.json) body.response_format = { type: 'json_object' };
     var waits = [3000, 8000, 0];
     for (var i = 0; i < 3; i++) {
